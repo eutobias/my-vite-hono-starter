@@ -1,5 +1,5 @@
-import { ClockButton } from "../components/ClockButton";
-import { Counter } from "../components/Counter";
+import { ClockButton } from "../app/components/ClockButton";
+import { Counter } from "../app/components/Counter";
 
 export interface HomeData {
   title: string;

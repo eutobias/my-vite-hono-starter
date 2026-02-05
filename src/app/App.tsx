@@ -1,7 +1,5 @@
-import { Layout } from "./Layout";
-import { Route, Link, Switch } from "wouter-hono";
-import { Home } from "./pages/Home";
-import { About } from "./pages/About";
+import { Link } from "wouter-hono";
+import { AppRouter } from "./AppRouter";
 
 export interface AppProps {
   initialState?: {
@@ -20,14 +18,7 @@ export function App({ initialState = {} }: AppProps) {
           <Link href="/about/123">About</Link>
         </li>
       </ul>
-      <Switch>
-        <Route path={"/"}>
-          <Home {...(initialState["/"] || {})} />;
-        </Route>
-        <Route path={"/about/:id"}>
-          <About {...(initialState["/about/:id"] || {})} />;
-        </Route>
-      </Switch>
+      <AppRouter initialState={initialState} />
     </>
   );
 }
