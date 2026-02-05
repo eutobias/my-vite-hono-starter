@@ -1,6 +1,10 @@
 import { PropsWithChildren } from 'hono/jsx'
 
-export function Layout({children}: PropsWithChildren) {
+interface LayoutProps extends PropsWithChildren {
+  initialState?: Record<string, any>;
+}
+
+export function Layout({children, initialState = {}}: LayoutProps) {
   return (
     <html lang="en">
       <head>
@@ -18,6 +22,7 @@ export function Layout({children}: PropsWithChildren) {
       </head>
       <body>
         <div id="root">{children}</div>
+        <script dangerouslySetInnerHTML={{__html: `window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};`}} />
       </body>
     </html>
   );
