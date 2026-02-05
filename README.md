@@ -6,7 +6,7 @@ A boilerplate to start a modern full-stack web application combining **Vite**, *
 
 ---
 
-Basically, you just need to mirror the route in AppRouter with the route from routes.tsx (backend routes made with hono). If you want to load the information in the backend, each page can have an asynchronous function that loads the data on the server and serves it as the initialState of the application.
+Basically, you just need to mirror the route in `AppRouter.tsx` with the route from `routes.tsx` (routes for the client application). If you want to load the information from backend, each page can have an asynchronous function that loads the data on the server and serves it as the initialState of the application, or you can load it directly inside the route and pass it as initialProps to component
 
 ---
 
